@@ -15,10 +15,10 @@ public class FileManager {
         this.fileName = fileName;
     }
     
-    public void saveArrayToFile(ArrayList<BigInteger> array) {
+    public void saveListToFile(ArrayList<BigInteger> list) {
         try {
             PrintWriter writer = new PrintWriter(new FileOutputStream(fileName, false));
-            for(BigInteger number : array) {
+            for(BigInteger number : list) {
                 writer.println(number+"\n");
             }
             writer.close();

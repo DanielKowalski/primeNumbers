@@ -3,27 +3,27 @@ package me.daniel.primeNumbers;
 import java.math.BigInteger;
 
 public class NumbersChecker {
-    private ArrayManager arrayManager;
+    private ListManager listManager;
     private FileManager fileManager;
     
-    public NumbersChecker(ArrayManager arrayManager) {
-        this.arrayManager = arrayManager;
+    public NumbersChecker(ListManager arrayManager) {
+        this.listManager = arrayManager;
         fileManager = new FileManager("primeNumbers.txt");
     }
     
     public void addNumber(BigInteger number) {
-        arrayManager.addNumber(number);
+        listManager.addNumber(number);
     }
     
     public BigInteger getNumber() {
-        return arrayManager.getNumber();
+        return listManager.getNumber();
     }
     
-    public void saveArray() {
-        fileManager.saveArrayToFile(arrayManager.getNumbersList());
+    public void saveList() {
+        fileManager.saveListToFile(listManager.getNumbersList());
     }
     
     public static void main(String[]args) {
-        new NumbersChecker(new ArrayManager());
+        new NumbersChecker(new ListManager());
     }
 }
