@@ -24,6 +24,11 @@ public class ListManager {
         return numbersList.get(cursor);
     }
     
+    public void removeNumber() {
+        numbersList.remove(cursor);
+        cursorBackward();
+    }
+    
     /*
      * Working on cursor
      */

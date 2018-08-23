@@ -19,6 +19,10 @@ public class NumbersChecker {
         return listManager.getNumber();
     }
     
+    public void removeNumber() {
+        listManager.removeNumber();
+    }
+    
     public void saveList() {
         fileManager.saveListToFile(listManager.getNumbersList());
     }
