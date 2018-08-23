@@ -8,9 +8,18 @@ public class NumbersChecker {
     
     public NumbersChecker(ArrayManager arrayManager) {
         this.arrayManager = arrayManager;
+        fileManager = new FileManager("primeNumbers.txt");
     }
     
     public void addNumber(BigInteger number) {
         arrayManager.addNumber(number);
+    }
+    
+    public void saveArray() {
+        fileManager.saveArrayToFile(arrayManager.getNumbersList());
+    }
+    
+    public static void main(String[]args) {
+        new NumbersChecker(new ArrayManager());
     }
 }

@@ -18,4 +18,12 @@ public class ArrayManager {
     public void resetCursor() {
         cursor = 0;
     }
+    
+    /*
+     * Getters and setters
+     */
+    
+    public ArrayList<BigInteger> getNumbersList() {
+        return numbersList;
+    }
 }
