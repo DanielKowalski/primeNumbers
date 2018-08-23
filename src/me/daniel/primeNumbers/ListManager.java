@@ -21,7 +21,12 @@ public class ListManager {
     }
     
     public BigInteger getNumber() {
-        return numbersList.get(cursor);
+        if(numbersList.size() > 0) {
+            return numbersList.get(cursor);
+        }
+        System.err.println("Nie ma liczb w liście");
+        System.exit(1);
+        return new BigInteger("0");
     }
     
     public void removeNumber() {
