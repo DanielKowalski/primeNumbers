@@ -11,6 +11,10 @@ public class ArrayManager {
         numbersList = new ArrayList<BigInteger>();
     }
     
+    /*
+     * Working on array
+     */
+    
     public void addNumber(BigInteger number) {
         numbersList.add(number);
     }
@@ -18,6 +22,10 @@ public class ArrayManager {
     public BigInteger getNumber() {
         return numbersList.get(cursor);
     }
+    
+    /*
+     * Working on cursor
+     */
     
     public void resetCursor() {
         cursor = 0;
