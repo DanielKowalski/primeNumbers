@@ -15,6 +15,10 @@ public class NumbersChecker {
         arrayManager.addNumber(number);
     }
     
+    public BigInteger getNumber() {
+        return arrayManager.getNumber();
+    }
+    
     public void saveArray() {
         fileManager.saveArrayToFile(arrayManager.getNumbersList());
     }

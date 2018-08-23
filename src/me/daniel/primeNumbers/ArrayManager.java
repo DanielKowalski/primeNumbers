@@ -15,6 +15,10 @@ public class ArrayManager {
         numbersList.add(number);
     }
     
+    public BigInteger getNumber() {
+        return numbersList.get(cursor);
+    }
+    
     public void resetCursor() {
         cursor = 0;
     }
