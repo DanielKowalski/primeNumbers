@@ -4,11 +4,11 @@ import java.math.BigInteger;
 
 import java.util.ArrayList;
 
-public class ListManager {
+class ListManager {
     private ArrayList<BigInteger> numbersList;
     private int cursor;
     
-    public ListManager() {
+    ListManager() {
         numbersList = new ArrayList<BigInteger>();
     }
     
@@ -16,11 +16,11 @@ public class ListManager {
      * Working on list
      */
     
-    public void addNumber(BigInteger number) {
+    void addNumber(BigInteger number) {
         numbersList.add(number);
     }
     
-    public BigInteger getNumber() {
+    BigInteger getNumber() {
         if(numbersList.size() > 0) {
             return numbersList.get(cursor);
         }
@@ -29,7 +29,7 @@ public class ListManager {
         return new BigInteger("0");
     }
     
-    public void removeNumber() {
+    void removeNumber() {
         numbersList.remove(cursor);
         cursorBackward();
     }
@@ -38,19 +38,19 @@ public class ListManager {
      * Working on cursor
      */
 
-    public void cursorForward() {
+    void cursorForward() {
         if(cursor < numbersList.size()-1) {
             cursor++;
         }
     }
     
-    public void cursorBackward() {
+    void cursorBackward() {
         if(cursor > 0) {
             cursor--;
         }
     }
     
-    public void resetCursor() {
+    void resetCursor() {
         cursor = 0;
     }
     
@@ -58,7 +58,7 @@ public class ListManager {
      * Getters and setters
      */
     
-    public ArrayList<BigInteger> getNumbersList() {
+     ArrayList<BigInteger> getNumbersList() {
         return numbersList;
     }
 }

@@ -1,10 +1,10 @@
 package me.daniel.primeNumbers;
 
-public class NumbersChecker {
+class NumbersChecker {
     private ListManager listManager;
     private FileManager fileManager;
     
-    public NumbersChecker(ListManager arrayManager) {
+    NumbersChecker(ListManager arrayManager) {
         this.listManager = arrayManager;
         fileManager = new FileManager("primeNumbers.txt");
     }

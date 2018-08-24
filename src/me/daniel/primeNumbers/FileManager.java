@@ -8,14 +8,14 @@ import java.math.BigInteger;
 
 import java.util.ArrayList;
 
-public class FileManager {
+class FileManager {
     private String fileName;
     
-    public FileManager(String fileName) {
+    FileManager(String fileName) {
         this.fileName = fileName;
     }
     
-    public void saveListToFile(ArrayList<BigInteger> list) {
+    void saveListToFile(ArrayList<BigInteger> list) {
         try {
             PrintWriter writer = new PrintWriter(new FileOutputStream(fileName, false));
             for(BigInteger number : list) {
