@@ -38,16 +38,20 @@ class ListManager {
      * Working on cursor
      */
 
-    void cursorForward() {
+    boolean cursorForward() {
         if(cursor < numbersList.size()-1) {
             cursor++;
+            return true;
         }
+        return false;
     }
     
-    void cursorBackward() {
+    boolean cursorBackward() {
         if(cursor > 0) {
             cursor--;
+            return true;
         }
+        return false;
     }
     
     void resetCursor() {
