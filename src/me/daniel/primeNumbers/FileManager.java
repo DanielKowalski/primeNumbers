@@ -40,7 +40,7 @@ class FileManager {
         try {
             PrintWriter writer = new PrintWriter(file);
             for(BigInteger number : list) {
-                writer.println(number+"\n");
+                writer.println(number);
             }
             writer.close();
         } catch (FileNotFoundException e) {
