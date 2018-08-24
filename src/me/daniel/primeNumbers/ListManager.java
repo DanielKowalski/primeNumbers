@@ -57,4 +57,12 @@ class ListManager {
     void resetCursor() {
         cursor = 0;
     }
+    
+    /*
+     * Getters and setters 
+     */
+    
+    ArrayList<BigInteger> getNumbersList() {
+        return numbersList;
+    }
 }
