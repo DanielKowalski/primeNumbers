@@ -8,8 +8,8 @@ class ListManager {
     private ArrayList<BigInteger> numbersList;
     private int cursor;
     
-    ListManager() {
-        numbersList = new ArrayList<BigInteger>();
+    ListManager(ArrayList<BigInteger> numbersList) {
+        this.numbersList = numbersList;
     }
     
     /*

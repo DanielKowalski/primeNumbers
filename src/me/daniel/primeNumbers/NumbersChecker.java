@@ -4,12 +4,14 @@ class NumbersChecker {
     private ListManager listManager;
     private FileManager fileManager;
     
-    NumbersChecker(ListManager arrayManager) {
-        this.listManager = arrayManager;
-        fileManager = new FileManager("primeNumbers.txt");
+    NumbersChecker(ListManager listManager, FileManager fileManager) {
+        this.listManager = listManager;
+        this.fileManager = fileManager;
     }
     
     public static void main(String[]args) {
-        new NumbersChecker(new ListManager());
+        FileManager fileManager = new FileManager("numbers.txt");
+        ListManager listManager = new ListManager(fileManager.getListFromFile());
+        new NumbersChecker(listManager, fileManager);
     }
 }
