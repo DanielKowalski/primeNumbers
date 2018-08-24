@@ -1,5 +1,7 @@
 package me.daniel.primeNumbers;
 
+import java.math.BigInteger;
+
 class NumbersChecker {
     private ListManager listManager;
     private FileManager fileManager;
@@ -9,6 +11,17 @@ class NumbersChecker {
         this.fileManager = fileManager;
     }
     
+    private void checkNumber(BigInteger number) {
+        listManager.resetCursor();
+        do {
+            BigInteger remainder = number.mod(listManager.getNumber());
+            if(remainder.equals(new BigInteger("0"))) {
+                return;
+            }
+        } while(listManager.cursorForward());
+        listManager.addNumber(number);
+    }
+
     public static void main(String[]args) {
         FileManager fileManager = new FileManager("primeNumbers.txt");
         ListManager listManager = new ListManager(fileManager.getListFromFile());
