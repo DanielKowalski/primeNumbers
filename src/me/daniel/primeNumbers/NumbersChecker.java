@@ -10,7 +10,7 @@ class NumbersChecker {
     }
     
     public static void main(String[]args) {
-        FileManager fileManager = new FileManager("numbers.txt");
+        FileManager fileManager = new FileManager("primeNumbers.txt");
         ListManager listManager = new ListManager(fileManager.getListFromFile());
         new NumbersChecker(listManager, fileManager);
     }
