@@ -11,7 +11,7 @@ class NumbersChecker {
         this.fileManager = fileManager;
     }
     
-    private void checkNumber(BigInteger number) {
+    private void isPrime(BigInteger number) {
         listManager.resetCursor();
         do {
             BigInteger remainder = number.mod(listManager.getNumber());

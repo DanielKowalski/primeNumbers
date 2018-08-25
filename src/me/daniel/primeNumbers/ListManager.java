@@ -58,6 +58,10 @@ class ListManager {
         cursor = 0;
     }
     
+    void setCursorOnLastPosition() {
+        cursor = numbersList.size()-1;
+    }
+    
     /*
      * Getters and setters 
      */
