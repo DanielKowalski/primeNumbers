@@ -10,16 +10,16 @@ class NumbersChecker {
         this.listManager = listManager;
         this.fileManager = fileManager;
     }
-    
-    private void isPrime(BigInteger number) {
+
+    private boolean isPrime(BigInteger number) {
         listManager.resetCursor();
         do {
             BigInteger remainder = number.mod(listManager.getNumber());
             if(remainder.equals(new BigInteger("0"))) {
-                return;
+                return false;
             }
         } while(listManager.cursorForward());
-        listManager.addNumber(number);
+        return true;
     }
 
     public static void main(String[]args) {
