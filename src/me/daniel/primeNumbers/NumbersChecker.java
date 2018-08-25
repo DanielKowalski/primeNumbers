@@ -10,6 +10,18 @@ class NumbersChecker {
         this.listManager = listManager;
         this.fileManager = fileManager;
     }
+    
+    private void checkNumbers(int numbersToCheck) {
+        listManager.setCursorOnLastPosition();
+        BigInteger number = listManager.getNumber();
+        for(int i = 0; i < numbersToCheck; i++) {
+            if(isPrime(number)) {
+                listManager.addNumber(number);
+            }
+            number = number.add(new BigInteger("2"));
+        }
+        fileManager.saveListToFile(listManager.getNumbersList());
+    }
 
     private boolean isPrime(BigInteger number) {
         listManager.resetCursor();
