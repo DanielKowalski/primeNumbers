@@ -24,13 +24,16 @@ class NumbersChecker {
     }
 
     private boolean isPrime(BigInteger number) {
+        System.out.println("Sprawdzam liczbę: "+number);
         listManager.resetCursor();
         do {
             BigInteger remainder = number.mod(listManager.getNumber());
             if(remainder.equals(new BigInteger("0"))) {
+                System.err.println("Liczba "+number+" nie jest pierszwa.");
                 return false;
             }
         } while(listManager.cursorForward());
+        System.out.println("Liczba "+number+" jest pierwsza");
         return true;
     }
 
