@@ -9,16 +9,18 @@ class NumbersChecker {
     NumbersChecker(ListManager listManager, FileManager fileManager) {
         this.listManager = listManager;
         this.fileManager = fileManager;
+        
+        checkNumbers(10);
     }
     
     private void checkNumbers(int numbersToCheck) {
         listManager.setCursorOnLastPosition();
         BigInteger number = listManager.getNumber();
         for(int i = 0; i < numbersToCheck; i++) {
+            number = number.add(new BigInteger("2"));
             if(isPrime(number)) {
                 listManager.addNumber(number);
             }
-            number = number.add(new BigInteger("2"));
         }
         fileManager.saveListToFile(listManager.getNumbersList());
     }
@@ -29,7 +31,7 @@ class NumbersChecker {
         do {
             BigInteger remainder = number.mod(listManager.getNumber());
             if(remainder.equals(new BigInteger("0"))) {
-                System.err.println("Liczba "+number+" nie jest pierszwa.");
+                System.out.println("Liczba "+number+" nie jest pierszwa.");
                 return false;
             }
         } while(listManager.cursorForward());
