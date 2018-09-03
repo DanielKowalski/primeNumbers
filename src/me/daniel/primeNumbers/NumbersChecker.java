@@ -10,7 +10,7 @@ class NumbersChecker {
         this.listManager = listManager;
         this.fileManager = fileManager;
         
-        checkNumbers(10);
+        checkNumbers(100000);
     }
     
     private void checkNumbers(int numbersToCheck) {
